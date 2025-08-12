@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página Privada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffc0cb;
+      margin: 20px;
+    }
+    #content {
+      display: none;
+      color: #4a2c2a;
+    }
+    #password-section {
+      max-width: 300px;
+      margin: 100px auto;
+      text-align: center;
+    }
+    input[type="password"] {
+      padding: 8px;
+      font-size: 16px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="password-section">
+    <h2>Ingresa la contraseña para ver la página</h2>
+    <input type="password" id="password" placeholder="Contraseña" />
+    <br />
+    <button onclick="checkPassword()">Entrar</button>
+    <p id="error-msg" style="color:red;"></p>
+  </div>
+
+  <div id="content">
+    <h1>Bienvenida, mi amor 💖</h1>
+    <p>Esta es la página secreta que hice para ti.</p>
+    <!-- Aquí puedes poner tus imágenes, textos, todo lo que quieras -->
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById('password').value;
+      const content = document.getElementById('content');
+      const errorMsg = document.getElementById('error-msg');
+      const passwordSection = document.getElementById('password-section');
+
+      // Cambia 'miClaveSecreta' por la contraseña que quieras
+      if (pass === 'majito') {
+        passwordSection.style.display = 'none';
+        content.style.display = 'block';
+        errorMsg.textContent = '';
+      } else {
+        errorMsg.textContent = 'Contraseña incorrecta, intenta de nuevo.';
+      }
+    }
+  </script>
+
+</body>
+</html>
